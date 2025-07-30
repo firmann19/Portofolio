@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
-import { fadeIn, fadeInUp, staggerContainer } from "../animations/Animations";
+import {
+  fadeIn,
+  fadeInUp,
+  staggerContainer,
+} from "../../animations/Animations";
+import { AboutMeProps } from "./types";
 
-const AboutMe = () => {
+const AboutMe = ({
+  imageUrl = "/assets/foto_firman_2.jpg",
+  email = "firman19ramadhan@gmail.com",
+}: AboutMeProps) => {
   return (
     <motion.div
       className="bg-zinc-900 text-slate-300"
@@ -34,7 +42,7 @@ const AboutMe = () => {
 
           <motion.div className="flex justify-start" variants={fadeInUp}>
             <motion.a
-              href="mailto:firmaaanr@gmail.com"
+              href={`mailto:${email}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 rounded-md bg-indigo-600 px-6 py-3 text-white font-medium hover:bg-indigo-500 transition-colors shadow-md"
@@ -72,7 +80,7 @@ const AboutMe = () => {
               <span className="w-3 h-3 rounded-full bg-green-500"></span>
             </div>
             <img
-              src="/assets/foto_firman_2.jpg"
+              src={imageUrl}
               alt="Firman Ramadhan"
               className="object-cover w-full h-96 grayscale hover:grayscale-0 transition duration-300"
             />

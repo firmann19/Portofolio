@@ -1,40 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { sanityClient } from "../sanity/sanity";
+import { sanityClient } from "../../sanity/sanity";
 import { Link } from "react-router-dom";
-
-interface Project {
-  _id: string;
-  title: string;
-  description: string;
-  category: string;
-  bg?: string;
-  image: string;
-  tags?: {
-    label: string;
-    color: string;
-    textColor: string;
-  }[];
-}
-
-const containerVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      when: "beforeChildren",
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1 },
-  exit: { opacity: 0, scale: 0.95 },
-};
+import { Project } from "./types";
 
 const Projects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -54,13 +22,8 @@ const Projects = () => {
           tags
         }`
       )
-      .then((data) => {
-        console.log("Fetched projects:", data);
-        setProjects(data);
-      })
-      .catch((err) => {
-        console.error("Sanity error:", err);
-      });
+      .then((data: Project[]) => setProjects(data))
+      .catch((err) => console.error("Sanity error:", err));
   }, []);
 
   const filteredProjects =
@@ -107,9 +70,16 @@ const Projects = () => {
         </div>
 
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.6,
+              when: "beforeChildren",
+              staggerChildren: 0.1,
+            },
+          }}
           viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
         >
@@ -117,10 +87,9 @@ const Projects = () => {
             {filteredProjects.map((project) => (
               <motion.div
                 key={project._id}
-                variants={itemVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
                 layout
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden rounded-lg bg-zinc-800 border border-zinc-700 shadow-md hover:shadow-xl transition-transform hover:scale-[1.02]"

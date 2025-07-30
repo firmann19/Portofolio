@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "../../animations/Animations";
-import Navbar from "../../components/Navbar";
 import { Link } from "react-router-dom";
 import { sanityClient } from "../../sanity/sanity";
+import Navbar from "../../components/Navbar/Navbar";
 
 interface Project {
   _id: string;

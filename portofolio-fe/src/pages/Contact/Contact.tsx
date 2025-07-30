@@ -1,7 +1,7 @@
-import Navbar from "../../components/Navbar";
-import ContactForm from "../../components/ContactForm";
+import Navbar from "../../components/Navbar/Navbar";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "../../animations/Animations";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 const Contact = () => {
   return (

@@ -1,16 +1,11 @@
 import { motion } from "framer-motion";
-import { fadeInUp, staggerContainer } from "../animations/Animations";
+import { fadeInUp, staggerContainer } from "../../animations/Animations";
 import { useEffect, useState } from "react";
-import { sanityClient } from "../sanity/sanity";
-
-interface Achievement {
-  _id: string;
-  label: string;
-  value: string;
-}
+import { sanityClient } from "../../sanity/sanity";
+import { AchievementItem } from "./types";
 
 const Achievement = () => {
-  const [stats, setStats] = useState<Achievement[]>([]);
+  const [stats, setStats] = useState<AchievementItem[]>([]);
 
   useEffect(() => {
     sanityClient

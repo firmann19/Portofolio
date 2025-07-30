@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar";
-import Header from "../components/Header";
-import Achievement from "../components/Achievement";
-import ContactForm from "../components/ContactForm";
-import Projects from "../components/Projects";
-import AboutMe from "../components/AboutMe";
+import Navbar from "../components/Navbar/Navbar";
+import Header from "../components/Header/Header";
+import Achievement from "../components/Achievement/Achievement";
+import Projects from "../components/Projects/Projects";
+import AboutMe from "../components/AboutMe/AboutMe";
+import ContactForm from "../components/ContactForm/ContactForm";
 
 const Home = () => {
   return (

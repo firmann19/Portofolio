@@ -1,7 +1,33 @@
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
-import { fadeIn, fadeInUp, staggerContainer } from "../animations/Animations";
+import {
+  fadeIn,
+  fadeInUp,
+  staggerContainer,
+} from "../../animations/Animations";
+import { SocialLink } from "./types";
+
+const socialLinks: SocialLink[] = [
+  {
+    href: "https://instagram.com/yourusername",
+    label: "Instagram",
+    icon: <FaInstagram />,
+    colorClass: "text-pink-500 hover:text-pink-400",
+  },
+  {
+    href: "https://x.com/yourusername",
+    label: "Twitter",
+    icon: <FaXTwitter />,
+    colorClass: "text-white hover:text-slate-300",
+  },
+  {
+    href: "https://facebook.com/yourusername",
+    label: "Facebook",
+    icon: <FaFacebookF />,
+    colorClass: "text-blue-500 hover:text-blue-400",
+  },
+];
 
 const Header = () => {
   return (
@@ -97,33 +123,18 @@ const Header = () => {
               Find me on
             </h3>
             <div className="flex space-x-4 text-xl">
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://instagram.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-pink-500 hover:text-pink-400"
-              >
-                <FaInstagram />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://x.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-slate-300"
-              >
-                <FaXTwitter />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://facebook.com/yourusername"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-400"
-              >
-                <FaFacebookF />
-              </motion.a>
+              {socialLinks.map((link) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2 }}
+                  className={link.colorClass}
+                >
+                  {link.icon}
+                </motion.a>
+              ))}
             </div>
           </motion.div>
         </motion.div>

@@ -1,11 +1,12 @@
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import { motion } from "framer-motion";
-import { fadeInUp } from "../animations/Animations";
+import { fadeInUp } from "../../animations/Animations";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { ContactFormData } from "./types";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     message: "",
@@ -24,7 +25,7 @@ const ContactForm = () => {
       .send(
         "service_9e6ir4d",
         "template_hqmy2nj",
-        formData,
+        formData as unknown as Record<string, unknown>,
         "U4hNYGxsT97s3Or1K"
       )
       .then(() => {

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { MenuItem } from "./types";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/projects" },
     { label: "Contact", href: "/contact" },
@@ -49,7 +50,7 @@ const Navbar = () => {
 
         {/* Right actions: CV + hamburger */}
         <div className="flex items-center space-x-3">
-          {/* Download CV: always visible, both mobile and desktop */}
+          {/* Download CV: always visible */}
           <a
             href="/public/CV_Firman_Ramadhan.pdf"
             download
@@ -58,7 +59,7 @@ const Navbar = () => {
             Download CV
           </a>
 
-          {/* Hamburger toggle (mobile only) */}
+          {/* Hamburger toggle */}
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
@@ -76,7 +77,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile menu (below nav bar) */}
+        {/* Mobile menu */}
         {isOpen && (
           <div className="w-full mt-3 md:hidden">
             <ul className="flex flex-col space-y-2 text-sm font-medium">
