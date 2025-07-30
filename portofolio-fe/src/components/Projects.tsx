@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { sanityClient } from "../sanity/sanity";
+import { Link } from "react-router-dom";
 
 interface Project {
   _id: string;
@@ -176,12 +177,12 @@ const Projects = () => {
         </motion.div>
 
         <div className="mt-16 text-center">
-          <a
-            href="/projects"
+          <Link
+            to="/projects"
             className="inline-block bg-indigo-600 text-white font-mono px-6 py-3 rounded-md text-sm hover:bg-indigo-500 transition"
           >
             View all projects
-          </a>
+          </Link>
         </div>
       </div>
     </section>
