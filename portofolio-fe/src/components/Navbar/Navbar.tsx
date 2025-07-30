@@ -48,7 +48,7 @@ const Navbar = () => {
 
         <div className="flex items-center space-x-3">
           <a
-            href="/public/CV_Firman_Ramadhan.pdf"
+            href="/CV_Firman_Ramadhan.pdf"
             download
             className="px-4 py-2 rounded-md bg-zinc-800 border border-indigo-500 text-indigo-400 font-mono text-sm hover:bg-indigo-500 hover:text-white transition"
           >
