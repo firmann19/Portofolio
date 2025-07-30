@@ -72,7 +72,7 @@ const AboutMe = () => {
               <span className="w-3 h-3 rounded-full bg-green-500"></span>
             </div>
             <img
-              src="/src/assets/foto_firman_2.jpg"
+              src="/assets/foto_firman_2.jpg"
               alt="Firman Ramadhan"
               className="object-cover w-full h-96 grayscale hover:grayscale-0 transition duration-300"
             />

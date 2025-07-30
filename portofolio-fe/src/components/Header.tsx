@@ -134,7 +134,7 @@ const Header = () => {
           variants={fadeIn}
         >
           <img
-            src="/src/assets/foto_firman.jpeg"
+            src="/assets/foto_firman.jpeg"
             alt="Firman Ramadhan"
             className="w-72 md:w-96 rounded-xl object-cover shadow-2xl border-4 border-indigo-600"
           />
