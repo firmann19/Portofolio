@@ -68,7 +68,7 @@ const Header = () => {
             </motion.a>
 
             <motion.a
-              href="#contact"
+              href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 border-2 border-indigo-500 px-5 py-3 rounded-lg text-indigo-400 font-medium hover:bg-indigo-500 hover:text-white transition-colors"
