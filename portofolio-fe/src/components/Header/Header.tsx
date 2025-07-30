@@ -7,6 +7,7 @@ import {
   staggerContainer,
 } from "../../animations/Animations";
 import { SocialLink } from "./types";
+import { Link } from "react-router-dom";
 
 const socialLinks: SocialLink[] = [
   {
@@ -92,29 +93,29 @@ const Header = () => {
               </svg>
             </motion.a>
 
-            <motion.link
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 border-2 border-indigo-500 px-5 py-3 rounded-lg text-indigo-400 font-medium hover:bg-indigo-500 hover:text-white transition-colors"
-            >
-              Contact Me
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/contact"
+                className="flex items-center gap-2 border-2 border-indigo-500 px-5 py-3 rounded-lg text-indigo-400 font-medium hover:bg-indigo-500 hover:text-white transition-colors"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 
+                Contact Me
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 
                   12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                />
-              </svg>
-            </motion.link>
+                  />
+                </svg>
+              </Link>
+            </motion.div>
           </motion.div>
 
           <motion.div variants={fadeInUp}>
