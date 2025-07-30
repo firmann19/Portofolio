@@ -19,7 +19,6 @@ const AboutMe = ({
       viewport={{ once: false, amount: 0.2 }}
     >
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6 py-20">
-        {/* Left Content */}
         <motion.div variants={fadeInUp}>
           <h1 className="text-4xl font-bold text-white mb-4">About Me</h1>
           <p className="text-slate-400 leading-relaxed mb-10 max-w-xl">
@@ -68,7 +67,6 @@ const AboutMe = ({
           </motion.div>
         </motion.div>
 
-        {/* Right Image - Terminal Style */}
         <motion.div
           className="flex justify-center md:justify-end"
           variants={fadeIn}

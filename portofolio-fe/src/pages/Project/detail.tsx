@@ -74,7 +74,6 @@ const ProjectDetail = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <div className="max-w-screen-xl mx-auto">
-          {/* Title */}
           <motion.div variants={fadeInUp} className="mb-10">
             <h1 className="text-4xl font-bold text-white mb-2">
               {project.title}
@@ -84,7 +83,6 @@ const ProjectDetail = () => {
             </p>
           </motion.div>
 
-          {/* Image */}
           <motion.div
             variants={fadeInUp}
             className={`overflow-hidden rounded-xl shadow-xl border border-indigo-500 mb-10 ${
@@ -98,7 +96,6 @@ const ProjectDetail = () => {
             />
           </motion.div>
 
-          {/* Tags */}
           {project.tags && project.tags.length > 0 && (
             <motion.div variants={fadeInUp}>
               <h2 className="text-2xl font-semibold text-indigo-400 mb-4">

@@ -59,7 +59,6 @@ const ContactForm = () => {
         className="grid grid-cols-1 md:grid-cols-12 bg-[#1e1e1e] rounded-lg overflow-hidden shadow-lg border border-gray-700"
         variants={fadeInUp}
       >
-        {/* Left - Contact Info */}
         <motion.div
           className="md:col-span-4 p-8 bg-[#252526] text-gray-200 space-y-6"
           variants={fadeInUp}
@@ -79,7 +78,6 @@ const ContactForm = () => {
           </div>
         </motion.div>
 
-        {/* Right - Form */}
         <motion.div
           className="md:col-span-8 p-8 bg-[#1e1e1e]"
           variants={fadeInUp}

@@ -57,7 +57,6 @@ const ProjectsPage = () => {
         viewport={{ once: true, amount: 0.2 }}
       >
         <div className="max-w-screen-xl mx-auto">
-          {/* Heading */}
           <motion.div variants={fadeInUp} className="mb-12 text-center">
             <h2 className="text-4xl font-bold tracking-tight">
               My <span className="text-indigo-400">Projects</span>
@@ -67,7 +66,6 @@ const ProjectsPage = () => {
             </p>
           </motion.div>
 
-          {/* Filter Buttons */}
           <motion.div
             variants={fadeInUp}
             className="flex justify-center flex-wrap gap-4 mb-12"
@@ -90,7 +88,6 @@ const ProjectsPage = () => {
             })}
           </motion.div>
 
-          {/* Projects Grid */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"

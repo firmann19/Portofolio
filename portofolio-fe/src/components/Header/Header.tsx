@@ -39,7 +39,6 @@ const Header = () => {
       viewport={{ once: false, amount: 0.2 }}
     >
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6 py-20">
-        {/* Left Content */}
         <motion.div variants={fadeInUp}>
           <h1 className="text-4xl font-bold mb-2 tracking-tight leading-snug">
             <span className="text-slate-400">Hi, I'm</span>{" "}
@@ -69,7 +68,7 @@ const Header = () => {
             variants={fadeInUp}
           >
             <motion.a
-              href="/public/CV_Firman_Ramadhan.pdf"
+              href="/CV_Firman_Ramadhan.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -93,7 +92,7 @@ const Header = () => {
               </svg>
             </motion.a>
 
-            <motion.a
+            <motion.link
               href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -115,7 +114,7 @@ const Header = () => {
                   12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                 />
               </svg>
-            </motion.a>
+            </motion.link>
           </motion.div>
 
           <motion.div variants={fadeInUp}>
@@ -139,7 +138,6 @@ const Header = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Image */}
         <motion.div
           className="flex justify-center md:justify-end"
           variants={fadeIn}

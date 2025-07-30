@@ -18,7 +18,6 @@ const Navbar = () => {
   return (
     <nav className="bg-zinc-900 text-slate-100 fixed w-full z-20 top-0 start-0 border-b border-zinc-800 shadow-sm">
       <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 py-3">
-        {/* Logo */}
         <Link
           to="/"
           className="text-xl font-bold tracking-tight text-indigo-400 font-mono"
@@ -26,7 +25,6 @@ const Navbar = () => {
           &lt;FR /&gt;
         </Link>
 
-        {/* Desktop menu */}
         <div className="hidden md:flex md:items-center md:space-x-8 text-sm font-medium">
           {menuItems.map(({ label, href }) => (
             <Link
@@ -48,9 +46,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Right actions: CV + hamburger */}
         <div className="flex items-center space-x-3">
-          {/* Download CV: always visible */}
           <a
             href="/public/CV_Firman_Ramadhan.pdf"
             download
@@ -59,7 +55,6 @@ const Navbar = () => {
             Download CV
           </a>
 
-          {/* Hamburger toggle */}
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
@@ -77,7 +72,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile menu */}
         {isOpen && (
           <div className="w-full mt-3 md:hidden">
             <ul className="flex flex-col space-y-2 text-sm font-medium">
